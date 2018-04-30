@@ -3,7 +3,7 @@
  * Plugin Name:       Kratom Shop Custom Functions
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for Kratom Shop.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Author:            Kratom Shop
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
