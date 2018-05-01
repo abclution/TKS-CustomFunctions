@@ -1,8 +1,8 @@
 <?php 
 /**
- * Plugin Name:       Kratom Shop Custom Functions + Autoupdate
+ * Plugin Name:       TKS Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
- * Description:       Custom functions for Kratom Shop.
+ * Description:       Custom functions for TKS.
  * Version:           1.5.0
  * Author:            Kratom Shop
  * Author URI:        http://example.com/
