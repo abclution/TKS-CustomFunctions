@@ -11,6 +11,7 @@
  * Text Domain:       plugin-name
  * Domain Path:       /languages
  * GitHub Plugin URI: https://github.com/abclution/TKS-CustomFunctions.git
+ * GitHub URI: abclution/TKS-CustomFunctions
  */
 include( dirname( __FILE__ ) . '/github-updater.php' );
 
