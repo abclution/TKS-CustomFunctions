@@ -3,7 +3,7 @@
  * Plugin Name:       Kratom Shop Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for Kratom Shop.
- * Version:           1.4.0
+ * Version:           1.5.0
  * Author:            Kratom Shop
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
@@ -14,6 +14,7 @@
  */
 include( dirname( __FILE__ ) . '/github-updater.php' );
 
+/* Autoupdate check if works */
 
 /* https://nicola.blog/2015/05/14/how-to-edit-processing-orders/   */
 /* WOOCOMMERCE */
