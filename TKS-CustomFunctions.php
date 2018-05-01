@@ -4,7 +4,7 @@
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for TKS.
  * Version:           1.5.0
- * Author:            Kratom Shop
+ * Author:            ABCLUTION
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
