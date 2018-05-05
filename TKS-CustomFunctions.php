@@ -73,4 +73,15 @@ function wc_orders_public() {
 add_filter( 'eonet_mua_avoid_password_reset', '__return_true');
 
 
+/* Disable Admin Bar for All Users Except for Administrators */
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
+}
+	
+/* Disable Admin Bar for All Users */ 
+/*  show_admin_bar(false); */
 
