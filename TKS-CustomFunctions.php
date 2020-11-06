@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:       TKS Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
@@ -88,4 +87,4 @@ include(dirname(__FILE__) . '/modules/wpWooCommerceDisableGutenbergBlockstylesFR
 
 // WOOCOMMERCE : REDIRECT AFTER LOGIN, BROKEN? NOT IN USE  
 // include(dirname(__FILE__) . '/modules/wpWooCommerceRedirectAfterLogin-Iconic.php');
-?>
+
