@@ -4,7 +4,7 @@
  * Plugin Name:       TKS Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for TKS.
- * Version:           1.6.1
+ * Version:           1.6.3
  * Author:            ABCLUTION
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
@@ -22,7 +22,7 @@ include(dirname(__FILE__) . '/github-updater.php');
 
 /* WORDPRESS CORE */
 
-// Prevents the "You are attempting to logout prompt."
+// Prevents the "You are attempting to logout prompt." and redirects to frontpage.
 include(dirname(__FILE__) . '/modules/wpCoreLogoutWithoutPrompt.php');
 
 // WORDPRESS CORE: DISABLE ADMIN BAR FOR ALL USERS EXCEPT ADMINISTRATORS
