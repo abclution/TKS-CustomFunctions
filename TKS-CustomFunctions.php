@@ -14,7 +14,7 @@
  * GitHub Plugin URI: https://github.com/abclution/TKS-CustomFunctions.git
  * GitHub URI: abclution/TKS-CustomFunctions
  */
-include(dirname(__FILE__) . '/github-updater.php');
+// include(dirname(__FILE__) . '/github-updater.php');
 
 
 /* Autoupdate check if works */
@@ -87,4 +87,5 @@ include(dirname(__FILE__) . '/modules/wpWooCommerceDisableGutenbergBlockstylesBA
 include(dirname(__FILE__) . '/modules/wpWooCommerceDisableGutenbergBlockstylesFRONTEND.php');
 
 // WOOCOMMERCE : REDIRECT AFTER LOGIN, BROKEN? NOT IN USE  
-include(dirname(__FILE__) . '/modules/wpWooCommerceRedirectAfterLogin-Iconic.php');
+// include(dirname(__FILE__) . '/modules/wpWooCommerceRedirectAfterLogin-Iconic.php');
+?>

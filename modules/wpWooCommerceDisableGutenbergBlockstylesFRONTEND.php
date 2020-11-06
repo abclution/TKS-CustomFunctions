@@ -1,4 +1,4 @@
-
+<?php
 // https://themesharbor.com/disabling-css-styles-of-woocommerce-blocks/
 
 // Disable WooCommerce front-end styles
@@ -7,7 +7,10 @@
 /**
  * Disable WooCommerce block styles (front-end).
  */
-function slug_disable_woocommerce_block_styles() {
-  wp_dequeue_style( 'wc-block-style' );
+function slug_disable_woocommerce_block_styles()
+{
+  wp_dequeue_style('wc-block-style');
 }
-add_action( 'wp_enqueue_scripts', 'slug_disable_woocommerce_block_styles' );
+add_action('wp_enqueue_scripts', 'slug_disable_woocommerce_block_styles');
+
+?>

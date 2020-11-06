@@ -1,4 +1,4 @@
-
+<?php
 // https://themesharbor.com/disabling-css-styles-of-woocommerce-blocks/
 
 //Disable WooCommerce back-end styles
@@ -7,8 +7,11 @@
 /**
  * Disable WooCommerce block styles (back-end).
  */
-function slug_disable_woocommerce_block_editor_styles() {
-  wp_deregister_style( 'wc-block-editor' );
-  wp_deregister_style( 'wc-block-style' );
+function slug_disable_woocommerce_block_editor_styles()
+{
+  wp_deregister_style('wc-block-editor');
+  wp_deregister_style('wc-block-style');
 }
-add_action( 'enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1 );
+add_action('enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1);
+
+?>

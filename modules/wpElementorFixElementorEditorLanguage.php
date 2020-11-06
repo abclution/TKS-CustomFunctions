@@ -1,12 +1,13 @@
-# ---------------------------------------------------------------------------------
-# Elementor Language
-# https://github.com/pojome/elementor/issues/5148
-#add_action('init', 'unload_textdomain_elementor', 100);function unload_textdomain_elementor() {
-#	if (is_admin()) {
-#		unload_textdomain('elementor');
-#		unload_textdomain('elementor-pro');
-#	}
-#}
+<?php 
+// # Elementor Language
+// https://github.com/pojome/elementor/issues/5148
+// add_action('init', 'unload_textdomain_elementor', 100);function unload_textdomain_elementor() {
+//	if (is_admin()) {
+//		unload_textdomain('elementor');
+//		unload_textdomain('elementor-pro');
+//  }
+// }
+
 
 
 function mg_unload_textdomain_elementor() {
@@ -19,3 +20,4 @@ function mg_unload_textdomain_elementor() {
 	}
 }
 add_action( 'init', 'mg_unload_textdomain_elementor', 100 );
+?>
