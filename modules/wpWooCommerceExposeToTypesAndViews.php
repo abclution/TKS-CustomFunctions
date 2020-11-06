@@ -11,5 +11,3 @@ function wc_orders_public()
         $wp_post_types['shop_order']->rewrite = true;
         $wp_post_types['shop_order']->query_var = 'shop_order';
 }
-
-?>

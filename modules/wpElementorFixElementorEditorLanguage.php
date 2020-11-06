@@ -20,4 +20,3 @@ function mg_unload_textdomain_elementor() {
 	}
 }
 add_action( 'init', 'mg_unload_textdomain_elementor', 100 );
-?>

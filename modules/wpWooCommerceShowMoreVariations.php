@@ -7,4 +7,3 @@ function handsome_bearded_guy_increase_variations_per_page()
 {
 	return 500;
 }
-?>

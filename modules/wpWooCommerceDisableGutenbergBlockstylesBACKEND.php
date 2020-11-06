@@ -13,5 +13,3 @@ function slug_disable_woocommerce_block_editor_styles()
   wp_deregister_style('wc-block-style');
 }
 add_action('enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1);
-
-?>

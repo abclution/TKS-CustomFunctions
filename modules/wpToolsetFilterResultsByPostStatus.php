@@ -19,4 +19,3 @@ function filter_post_type_status_func($query_args, $view_settings, $view_id)
 	}
 	return $query_args;
 }
-?>

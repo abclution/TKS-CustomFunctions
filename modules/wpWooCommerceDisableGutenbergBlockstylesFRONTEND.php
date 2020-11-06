@@ -12,5 +12,3 @@ function slug_disable_woocommerce_block_styles()
   wp_dequeue_style('wc-block-style');
 }
 add_action('wp_enqueue_scripts', 'slug_disable_woocommerce_block_styles');
-
-?>

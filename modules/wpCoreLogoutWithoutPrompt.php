@@ -13,4 +13,3 @@ function logout_without_confirm($action, $result)
         die;
     }
 }
-?>

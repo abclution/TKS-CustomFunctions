@@ -14,4 +14,3 @@ add_filter( 'wpseo_opengraph_title', function ( $str ) {
 add_filter( 'wpseo_opengraph_desc', function ( $str ) {
 	return __( $str );
 }, 10, 1 );
-?>

@@ -46,4 +46,3 @@ add_filter('woocommerce_registration_redirect', 'iconic_register_redirect');
 
 /* 937 New User Registration Link */
 /* ------------------------------------------------------------------------ */
-?>
