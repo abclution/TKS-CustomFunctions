@@ -1,9 +1,10 @@
-<?php 
+<?php
+
 /**
  * Plugin Name:       TKS Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for TKS.
- * Version:           1.5.2
+ * Version:           1.6.0
  * Author:            ABCLUTION
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
@@ -13,75 +14,77 @@
  * GitHub Plugin URI: https://github.com/abclution/TKS-CustomFunctions.git
  * GitHub URI: abclution/TKS-CustomFunctions
  */
-include( dirname( __FILE__ ) . '/github-updater.php' );
+include(dirname(__FILE__) . '/github-updater.php');
+
 
 /* Autoupdate check if works */
 
-/* https://nicola.blog/2015/05/14/how-to-edit-processing-orders/   */
-/* WOOCOMMERCE */
-/* ENABLE EDITING FOR "PROCCESSING ORDERS" */
-add_filter( 'wc_order_is_editable', 'wc_make_processing_orders_editable', 10, 2 );
-function wc_make_processing_orders_editable( $is_editable, $order ) {
-    if ( $order->get_status() == 'processing' ) {
-        $is_editable = true;
-    }
 
-    return $is_editable;
-}
+/* WORDPRESS CORE */
 
-/* WOOCOMMERCE */
-/* Show more variations on product back end */
+// Prevents the "You are attempting to logout prompt."
+include(dirname(__FILE__) . '/modules/wpCoreLogoutWithoutPrompt.php');
 
-add_filter( 'woocommerce_admin_meta_boxes_variations_per_page', 'handsome_bearded_guy_increase_variations_per_page' );
-function handsome_bearded_guy_increase_variations_per_page() {
-	return 500;
-}
+// WORDPRESS CORE: DISABLE ADMIN BAR FOR ALL USERS EXCEPT ADMINISTRATORS
+include(dirname(__FILE__) . '/modules/wpCoreDisableAdminBarForAllUsersExceptAdmins.php');
+
+// WORDPRESS CORE: DISABLE ADMIN BAR FOR ALL USERS 
+// include( dirname( __FILE__ ) . '/modules/wpCoreDisableAdminBarForAllUsers.php' );
 
 /* WOOCOMMERCE */
-/* //Increase in the number of variations to 150  */
-define( 'WC_MAX_LINKED_VARIATIONS', 500 );
-/* Read more at: https://www.proy.info/create-more-than-50-product-variations-in-woocommerce/  */
 
-/* WOOCOMMERCE */
-/* UNCHECK SHIP TO DIFFERENT ADDRESS ON CHECKOUT */
-add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
+// WOOCOMMERCE: ENABLE EDITING OF IN PROGRESS ORDERS
+include(dirname(__FILE__) . '/modules/wpWooCommerceEnableEditOfInProcessOrders.php');
 
-/* WOOCOMMERCE */
-/* # Hide out of stock variations # https://stackoverflow.com/questions/46407618/hide-out-of-stock-variations-woocommerce */
-function custom_wc_ajax_variation_threshold( $qty, $product ) {
-return 500; // Enter value that is higher then possible variations.
-}
-add_filter( 'woocommerce_ajax_variation_threshold', 
-'custom_wc_ajax_variation_threshold', 10, 2 );
+// WOOCOMMERCE: SHOW MORE VARIATIONS IN PRODUCT BACKEND 
+include(dirname(__FILE__) . '/modules/wpWooCommerceShowMoreVariations.php');
 
+// LIVE
+// WOOCOMMERCE: INCREASE NUMBER OF LINKED VARIATIONS, https://www.proy.info/create-more-than-50-product-variations-in-woocommerce/  
+include(dirname(__FILE__) . '/modules/wpWooCommerceMoreLinkedVariations.php');
 
+// LIVE
+// WOOCOMMERCE: UNCHECK SHIP TO DIFFERENT ADDRESS ON CHECKOUT 
+include(dirname(__FILE__) . '/modules/wpWooCommerceUnsetShipToDifferentAddress.php');
 
-/* Expose shop orders to types and views */
-/* https://wp-types.com/forums/topic/woocommerce-shop_order/  */
-add_action('init', 'wc_orders_public');
-function wc_orders_public() {
-        global $wp_post_types;
-        $wp_post_types['shop_order']->public = true;
-        $wp_post_types['shop_order']->publicly_queryable = true;
-        $wp_post_types['shop_order']->exclude_from_search = false;
-        $wp_post_types['shop_order']->rewrite = true;
-        $wp_post_types['shop_order']->query_var = 'shop_order';
-}
+// DISABLED on LIVE
+// WOOCOMMERCE: HIDE OUT OF STOCK VARIATIONS, https://stackoverflow.com/questions/46407618/hide-out-of-stock-variations-woocommerce
+// include(dirname(__FILE__) . '/modules/wpWooCommerceHideOutOfStockVariations.php');
+
+// LIVE
+// WOOCOMMERCE + TYPES AND VIEWS: EXPOSE SHOP ORDERS TO TYPES AND VIEWS, https://wp-types.com/forums/topic/woocommerce-shop_order/
+include(dirname(__FILE__) . '/modules/wpWooCommerceExposeToTypesAndViews.php');
 
 
-/* EONET MANUAL USER APPROVE PREVENT PASSWORD RESET UPON APPROVAL */
-add_filter( 'eonet_mua_avoid_password_reset', '__return_true');
+/* OTHER WORDPRESS PLUGINS */
+
+// LIVE
+// EONET MANUAL USER APPROVE PLUGIN: PREVENT PASSWORD RESET UPON APPROVAL, https://wordpress.org/plugins/eonet-manual-user-approve/
+include(dirname(__FILE__) . '/modules/wpEonetManualUserApprovePreventPasswordReset.php');
 
 
-/* Disable Admin Bar for All Users Except for Administrators */
-add_action('after_setup_theme', 'remove_admin_bar');
- 
-function remove_admin_bar() {
-if (!current_user_can('administrator') && !is_admin()) {
-  show_admin_bar(false);
-}
-}
-	
-/* Disable Admin Bar for All Users */ 
-/*  show_admin_bar(false); */
+/* ------------------------------------------------------------------------------------------------------------------- */
 
+// LIVE
+// TOOLSET: This filter allows the Toolset app to filter results by their post status (Wordpress Woocommerce Status shipped,failed etc)
+include(dirname(__FILE__) . '/modules/wpToolsetFilterResultsByPostStatus.php');
+
+// LIVE
+// ELEMENTOR: FIX ELEMENTOR EDITOR LANGUAGE 
+include(dirname(__FILE__) . '/modules/wpElementorFixElementorEditorLanguage.php');
+
+// LIVE
+// QTRANSLATE + YOAST SEO FIX:  
+include(dirname(__FILE__) . '/modules/wpQtranslateYoastSEOFix.php');
+
+// LIVE
+// WOOCOMMERCE + GUTENBERG: DISABLE BACK END BLOCK STYLES  
+include(dirname(__FILE__) . '/modules/wpWooCommerceDisableGutenbergBlockstylesBACKEND.php');
+
+
+// LIVE
+// WOOCOMMERCE + GUTENBERG: DISABLE FRONT END BLOCK STYLES  
+include(dirname(__FILE__) . '/modules/wpWooCommerceDisableGutenbergBlockstylesFRONTEND.php');
+
+// WOOCOMMERCE : REDIRECT AFTER LOGIN, BROKEN? NOT IN USE  
+include(dirname(__FILE__) . '/modules/wpWooCommerceRedirectAfterLogin-Iconic.php');
