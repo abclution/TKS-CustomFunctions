@@ -4,7 +4,7 @@
  * Plugin Name:       TKS Custom Functions + Autoupdate
  * Plugin URI:        https://github.com/abclution/TKS-CustomFunctions.git
  * Description:       Custom functions for TKS.
- * Version:           1.6.0
+ * Version:           1.6.1
  * Author:            ABCLUTION
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
